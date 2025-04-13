@@ -1,9 +1,14 @@
 import React from "react";
 import logo from "../assets/img/pnglogo.png";
 import { useState } from "react";
-type Props = Pizza  // lấy thuộc tính từ file pizza.models.tsx
+type Props = Pizza &
+{
+    handleRemove: (id: number) => void
+}
+// lấy thuộc tính từ file pizza.models.tsx
 
-const CardPizza = ({ title, decription }: Props) => {
+const CardPizza = (
+    { id, title, decription, handleRemove }: Props) => {
 
     const [pizzas, setPizzas] = useState<Pizza[]>([{
         id: 1,
@@ -25,7 +30,7 @@ const CardPizza = ({ title, decription }: Props) => {
 
     return (
         <>
-            <div className="containerCardpizza" >
+            <div className="containerCardpizza" onClick={() => handleRemove(id!)} >
                 <div
                     style={{
                         boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
