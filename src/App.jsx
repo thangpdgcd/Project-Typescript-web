@@ -8,13 +8,11 @@ function App() {
     <div className="container">
       {/* header */}
       <Header />
-
       {/* homepage */}
       <Homepage />
-
       {/* Createapp */}
-      {/* footer */}
       <Footer />
+      {/* footer */}
     </div>
   );
 }
